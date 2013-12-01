@@ -5,7 +5,6 @@ RUN apt-get update
 RUN apt-get -y install john
 # RUN apt-get -y install wamerican wbritish
 RUN ln -s /etc/john/john.conf /john.ini
-RUN mkdir /data
-WORKDIR /data
+VOLUME ["/data"]
 
 ENTRYPOINT ["john"]
